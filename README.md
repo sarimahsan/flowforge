@@ -1,263 +1,263 @@
-# 🚀 FlowForge AI - Enterprise Sales Automation Platform
+# FlowForge AI
 
-> **Intelligent AI-powered sales automation platform that generates personalized email campaigns, scores leads, handles objections, and tracks analytics — all with a beautiful, professional UI.**
+FlowForge AI is an AI-assisted enterprise sales outreach platform. It generates outbound email campaigns, scores and reviews email quality, suggests objection handling, tracks campaign activity, and surfaces lead intelligence through a FastAPI backend and a React + Vite frontend.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-Production%20Ready-brightgreen.svg)
+## What this project does
 
----
+The application is organized around a campaign workflow:
 
-## 📋 Table of Contents
+1. Enter a company and a campaign goal.
+2. Run the AI pipeline to research the target and generate a sequence of emails.
+3. Save the generated campaign data to the database.
+4. Review quality scores, objections, follow-up timing, analytics, and email history.
+5. Send emails through Gmail and monitor delivery status.
 
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Screenshots](#screenshots)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Environment Setup](#environment-setup)
-- [Running Locally](#running-locally)
-- [Docker Deployment](#docker-deployment)
-- [API Documentation](#api-documentation)
-- [Features in Detail](#features-in-detail)
-- [Database Schema](#database-schema)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+The UI is designed as a dashboard with separate views for campaign generation, email management, analytics, lead scoring, calendar scheduling, LinkedIn outreach, exports, and campaign history.
 
----
+## Key capabilities
 
-## 🎯 Overview
+- Campaign generation with AI-assisted research and sequence creation.
+- Email quality review with scoring and recommendations.
+- Objection generation with likely responses and alternative replies.
+- Lead scoring and company prioritization.
+- Gmail integration for sending and tracking email activity.
+- Follow-up scheduling and campaign timeline support.
+- Analytics dashboards and campaign history views.
+- Export utilities for sharing campaign data externally.
 
-**FlowForge AI** is an enterprise-grade sales automation platform that leverages artificial intelligence to help sales teams:
-
-- 🤖 **Generate** intelligent, personalized email campaigns
-- 📊 **Score** leads based on opportunity potential
-- 💬 **Pre-handle** objections with AI-generated responses
-- 📈 **Track** campaign performance with comprehensive analytics
-- 📧 **Manage** email sequences and follow-ups
-- 🔗 **Integrate** with Gmail, LinkedIn, and external data sources
-- 📱 **Export** campaigns as professional PDF reports
-
-Built with modern web technologies and designed for scalability, FlowForge AI transforms cold outreach into a data-driven, intelligent process.
-
----
-
-## ✨ Key Features
-
-### 🎨 Campaign Generation
-- **AI-Powered Email Writer** - Generate highly personalized email sequences
-- **Multi-Variant Testing** - Create A/B variants (aggressive vs. soft approach)
-- **Company Research** - Automatic company analysis and research
-- **Personalization Engine** - Dynamic personalization based on prospect data
-
-### 📊 Analytics & Insights
-- **Real-time Dashboard** - Track campaign performance live
-- **Email Tracking** - Monitor opens, clicks, and engagement
-- **Lead Scoring** - Visual dashboard with color-coded urgency levels
-- **Performance Metrics** - 15+ analytics metrics per campaign
-- **Conversion Tracking** - End-to-end funnel analysis
-
-### 🤖 AI Agents
-- **Quality Assurance Agent** - Scores emails 0-100 with specific feedback
-- **Objection Handler Agent** - Pre-generates responses to likely objections
-- **Research Agent** - Deep research on companies and prospects
-- **Analytics Agent** - Advanced analytics and insights generation
-- **Variant Agent** - Creates A/B test variations
-
-### 💬 Objection Handling
-- **3 Most Likely Objections** - AI-identified top objections with likelihood scores
-- **Multiple Response Approaches** - Pre-written responses for each objection
-- **Alternative Fallbacks** - 2 backup responses per objection
-- **Trigger Identification** - Common objection triggers listed
-
-### 📧 Email Management
-- **Gmail Integration** - Native Gmail integration with OAuth2
-- **Email History** - Complete email tracking and history
-- **Template Management** - Save and reuse email templates
-- **Follow-up Automation** - Scheduled follow-up sequences
-- **Email Status Tracking** - Draft, sent, opened, clicked states
-
-### 📈 Lead Management
-- **Lead Scoring Dashboard** - Visual grid of all companies with scores
-- **Color-Coded Urgency** - Red (urgent) → Yellow (medium) → Green (low priority)
-- **Opportunity Levels** - Scored 0-100 based on fit and timing
-- **LinkedIn Integration** - Direct LinkedIn outreach capabilities
-- **Lead Database** - Complete prospect and company database
-
-### 📱 Export & Reporting
-- **PDF Export** - Professional PDF reports with charts and metrics
-- **Campaign Summary** - Complete campaign details and results
-- **Email Analytics** - Detailed email-level performance
-- **Data Export** - Export campaigns for external use
-
-### 🎨 Modern UI/UX
-- **Professional Dark Theme** - Pitch black background with glass morphism
-- **Responsive Design** - Works on desktop, tablet, and mobile
-- **Fixed Sidebar Navigation** - 7-tab navigation with active states
-- **Real-time Agent Logs** - Terminal-style agent activity viewer
-- **Intuitive Dashboard** - All key metrics at a glance
-
----
-
-## 📸 Screenshots
-
-### 1. Campaign Generator Dashboard
-```
-[Screenshot Placeholder: Main dashboard with campaign form]
-- Company name input
-- Sales goal input
-- Campaign generation button
-- Loading animation with AI spinner
-```
-
-### 2. Generated Emails Display
-```
-[Screenshot Placeholder: Email sequence view]
-- Email 1 (Day 0)
-- Email 2 (Day 3)
-- Email 3 (Day 7)
-- Follow-up options
-```
-
-### 3. Email Quality Review
-```
-[Screenshot Placeholder: Quality scores breakdown]
-- Overall score: 78/100
-- Subject line quality
-- Personalization score
-- Body quality
-- CTA effectiveness
-- Issues and recommendations
-```
-
-### 4. Objection Handler
-```
-[Screenshot Placeholder: Objection cards]
-- Objection 1: "That's too expensive" (82% likely)
-- Objection 2: "We already have something" (65% likely)
-- Objection 3: "Let me think about it" (58% likely)
-- With expandable response cards
-```
-
-### 5. Email Variants (A/B Testing)
-```
-[Screenshot Placeholder: Side-by-side variant comparison]
-- Variant A: Aggressive approach
-- Variant B: Soft approach
-- Performance metrics
-- Toggle to switch between variants
-```
-
-### 6. Lead Scoring Dashboard
-```
-[Screenshot Placeholder: Grid of company cards]
-- Company name and industry
-- Opportunity score (0-100)
-- Color coding by urgency
-- Quick action buttons
-- Filter and sort options
-```
-
-### 7. Campaign Analytics
-```
-[Screenshot Placeholder: Analytics dashboard with charts]
-- Line chart: Opens over time
-- Bar chart: Email performance
-- Pie chart: Engagement breakdown
-- Stats: Open rate, Click rate, Reply rate
-- Conversion funnel
-```
-
-### 8. Email Management Panel
-```
-[Screenshot Placeholder: Email history view]
-- Email list with status badges
-- Recipient, subject, date
-- Opens, clicks, replies indicators
-- Gmail sync status
-```
-
-### 9. LinkedIn Outreach
-```
-[Screenshot Placeholder: LinkedIn integration screen]
-- Message template
-- Recipient list
-- Send schedule
-- Connection requests tracking
-```
-
-### 10. Terminal-Style Agent Activity Log
-```
-[Screenshot Placeholder: Agent activity viewer]
-- Black terminal background
-- Green text output
-- Real-time event logging
-- Color-coded messages (✅ success, ❌ error)
-- Event counter
-```
-
-### 11. PDF Export
-```
-[Screenshot Placeholder: Generated PDF preview]
-- Campaign summary
-- Email sequences
-- Analytics charts
-- Professional formatting
-- Export quality
-```
-
-### 12. Professional Dark UI
-```
-[Screenshot Placeholder: Full app interface]
-- Pitch black background
-- Glass morphism effects
-- Sidebar navigation
-- Responsive layout
-- Header with Gmail status
-```
-
----
-
-## 🛠 Tech Stack
+## Tech stack
 
 ### Frontend
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **React** | 19.2.4 | UI framework |
-| **Vite** | 8.0.1 | Build tool & dev server |
-| **Tailwind CSS** | 4.2.2 | Styling & responsive design |
-| **Lucide React** | 1.7.0 | Icon library |
-| **Recharts** | 3.8.1 | Charts & analytics |
-| **jsPDF** | 4.2.1 | PDF generation |
-| **html2canvas** | 1.4.1 | HTML to image conversion |
+
+- React 19
+- Vite 8
+- Tailwind CSS 4
+- Lucide React for icons
+- Recharts for charts and analytics
+- jsPDF and html2canvas for PDF/export workflows
 
 ### Backend
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **FastAPI** | 0.111.0+ | Web framework |
-| **Uvicorn** | 0.30.0+ | ASGI server |
-| **SQLAlchemy** | 2.0.0+ | ORM |
-| **SQLModel** | 0.0.14 | SQL database model |
-| **Pydantic** | 2.7.0+ | Data validation |
-| **LangChain** | 0.0.300+ | LLM orchestration |
-| **LangChain Groq** | 0.0.1+ | Groq LLM integration |
-| **Tavily** | 0.5.0+ | Web search API |
-| **Google Auth** | 2.25.0+ | Gmail OAuth |
-| **psycopg2** | 2.9.0+ | PostgreSQL driver |
 
-### Databases
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **PostgreSQL** | 15 | Primary database |
-| **SQLite** | Built-in | Local development |
+- FastAPI
+- Uvicorn
+- SQLAlchemy and SQLModel
+- Pydantic v2 and pydantic-settings
+- LangChain and LangChain Groq
+- Tavily search client
+- Google Auth and Gmail API client libraries
+- PostgreSQL support via psycopg2-binary
 
-### External Services
-- **Gmail API** - Email sending and tracking
-- **Google OAuth 2.0** - Authentication
+### Infrastructure
+
+- Docker and Docker Compose
+- Nginx reverse proxy
+- PostgreSQL 15
+
+## Repository layout
+
+```text
+backend/        FastAPI app, agents, services, models, and API routes
+frontend/       React application and dashboard components
+nginx/          Reverse proxy configuration
+docker-compose.yml  Local full-stack orchestration
+init-db.sql     Database bootstrap script
+requirements.txt Python dependencies for the backend
+```
+
+## Prerequisites
+
+- Python 3.11 or newer
+- Node.js 18 or newer
+- npm
+- PostgreSQL 15 if you are running outside Docker
+- Optional: Gmail OAuth credentials, Groq API key, Tavily API key, and Notion credentials depending on which features you use
+
+## Environment variables
+
+Create a backend `.env` file with the values your deployment needs. The backend reads settings from environment variables and `.env` via `pydantic-settings`.
+
+Required for the backend runtime:
+
+- `GROQ_API_KEY`
+- `TAVILY_API_KEY`
+
+Common optional settings:
+
+- `DATABASE_URL` defaults to `sqlite:///./flowforge.db` when not provided
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
+- `NOTION_API_KEY`
+
+Variables used by the Docker Compose setup:
+
+- `DB_USER`
+- `DB_PASSWORD`
+- `DB_NAME`
+- `DB_PORT`
+- `DEBUG`
+- `SECRET_KEY`
+- `CORS_ORIGINS`
+- `GMAIL_CLIENT_ID`
+- `GMAIL_CLIENT_SECRET`
+- `OPENAI_API_KEY`
+- `VITE_API_URL`
+- `NODE_ENV`
+- `HTTP_PORT`
+- `HTTPS_PORT`
+
+## Local development
+
+### Backend
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the API:
+
+```bash
+cd backend
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The backend exposes the API at `http://localhost:8000` and mounts its routes under `/api`.
+
+### Frontend
+
+Install dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+Start the Vite dev server:
+
+```bash
+npm run dev
+```
+
+Build the frontend for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Running with Docker
+
+The project includes a full stack Docker Compose setup with PostgreSQL, the FastAPI backend, the React frontend, and Nginx.
+
+Start the stack:
+
+```bash
+docker compose up --build
+```
+
+Useful service ports in the default compose file:
+
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:8000`
+- Nginx: `http://localhost`
+- PostgreSQL: `localhost:5432`
+
+The compose file also wires in a database initialization script through `init-db.sql` and mounts persistent database storage through a named volume.
+
+## Backend overview
+
+The backend entry point is [backend/main.py](backend/main.py), which creates the FastAPI application, enables CORS, registers the API routers, and initializes the database on startup.
+
+### Notable API areas
+
+- Health and configuration checks
+- Campaign generation pipeline execution
+- Campaign persistence to the database
+- Gmail sending and Gmail auth status checks
+- Email statistics and tracking
+- Calendar scheduling endpoints
+- Quality review and objection handling routes
+- Lead dashboard and export routes
+
+### Example endpoints
+
+- `GET /api/health`
+- `GET /api/config-status`
+- `POST /api/run`
+- `POST /api/campaigns/create-from-pipeline`
+- `GET /api/campaigns/validate-request`
+- `POST /api/send-email`
+- `GET /api/email-stats`
+- `GET /api/gmail-auth-status`
+
+## Frontend overview
+
+The frontend is a dashboard-style React application that talks to the backend at `http://localhost:8000/api` during development.
+
+Main sections in the UI include:
+
+- Campaign generator
+- Campaign analytics
+- Email management and status tracking
+- Email quality review
+- Objection handling
+- Lead scoring dashboard
+- LinkedIn outreach
+- Calendar scheduler
+- Export panel
+- Campaign history
+- Real-time agent activity log
+
+## Database model summary
+
+The SQLAlchemy models in [backend/models/database_models.py](backend/models/database_models.py) center around:
+
+- Companies and lead metadata
+- Campaigns linked to companies
+- Emails and variants
+- Email quality scores
+- Objections and responses
+- Follow-up scheduling records
+- Export tracking
+- Analytics records
+
+That structure supports the campaign lifecycle from research through generation, review, sending, and reporting.
+
+## Operational notes
+
+- The API health route is available at `/api/health` and returns configuration details for quick verification.
+- The app uses Gmail authentication for sending email features. If Gmail is not connected, those workflows will fail gracefully.
+- The backend is configured to allow all CORS origins in `backend/main.py`, but the compose environment constrains the frontend and backend URLs through the runtime configuration.
+- The default database behavior is SQLite for local development unless `DATABASE_URL` is provided.
+
+## Troubleshooting
+
+If the backend starts but features fail:
+
+- Check that `GROQ_API_KEY` and `TAVILY_API_KEY` are set.
+- Confirm the database is reachable and `DATABASE_URL` is correct.
+- Verify Gmail OAuth credentials if email sending is involved.
+- Call `GET /api/config-status` to see which runtime values are missing.
+
+If Docker services do not connect:
+
+- Ensure ports `80`, `3000`, `8000`, and `5432` are not already in use.
+- Check the logs for the `db`, `backend`, `frontend`, and `nginx` containers.
+- Confirm `init-db.sql` is valid if startup fails during database initialization.
+
+## Contributing
+
+When making changes, keep the backend API contract and the frontend dashboard state in sync. The campaign generation flow relies on the `run` endpoint followed by campaign persistence, so changes to response shapes should be reflected in both layers.
+
+## License
+
+No license file is currently included in the repository. Add one before distributing the project publicly.
 - **OpenAI API** - LLM for content generation
 - **Groq API** - Fast LLM inference
 - **Tavily API** - Web search and research
