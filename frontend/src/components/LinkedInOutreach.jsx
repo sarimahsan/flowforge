@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const API_URL = "http://localhost:8000/api"
+const API_URL = "/api"
 
 const departments = ["Sales", "Marketing", "Engineering", "HR", "Executive", "All"]
 const tones = ["professional", "casual", "consultative"]

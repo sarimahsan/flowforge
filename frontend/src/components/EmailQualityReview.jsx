@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Star, AlertCircle, CheckCircle, Lightbulb, TrendingUp, Mail } from 'lucide-react'
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = '/api'
 
 export const EmailQualityReview = ({ campaignId, emails, company, onClose }) => {
   const [scores, setScores] = useState([])

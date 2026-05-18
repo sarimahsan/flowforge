@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Search, Filter, Zap, RefreshCw, Mail, CheckCircle, AlertCircle, ChevronRight, Flame, Clock, Send } from 'lucide-react'
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = '/api'
 
 export const LeadScoringDashboard = ({ onStartCampaign }) => {
   const [campaigns, setCampaigns] = useState([])

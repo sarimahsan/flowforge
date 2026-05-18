@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { TrendingUp, Mail, CheckCircle2, AlertCircle, Zap, Award, BarChart3, Clock, Globe } from 'lucide-react'
 import { BarChart, Bar, PieChart, Pie, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts'
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = '/api'
 
 export default function CampaignAnalytics({ campaignId }) {
   const [analytics, setAnalytics] = useState(null)

@@ -21,7 +21,7 @@ import ExportPanel from "./components/ExportPanel"
 import CampaignHistory from "./components/CampaignHistory"
 // import "./index.css"
 
-const API_URL = "http://localhost:8000/api"
+const API_URL = "/api"
 
 export default function App() {
   // Main State

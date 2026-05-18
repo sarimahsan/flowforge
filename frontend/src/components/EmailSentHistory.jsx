@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Trash2, Mail, CheckCircle, AlertCircle, Clock, Search, Filter, Download, Plus } from "lucide-react"
 
-const API_URL = "http://localhost:8000/api"
+const API_URL = "/api"
 
 export default function EmailSentHistory({ campaignId, emails, onDelete }) {
   const [sentEmails, setSentEmails] = useState([])

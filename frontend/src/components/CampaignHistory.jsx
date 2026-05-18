@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Clock, ChevronRight, Trash2, GripVertical, Mail, AlertCircle, CheckCircle, Loader } from "lucide-react"
 
-const API_URL = "http://localhost:8000/api"
+const API_URL = "/api"
 
 export default function CampaignHistory({ onLoadCampaign, onCampaignLoaded }) {
   const [campaigns, setCampaigns] = useState([])

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Download, FileText, CheckCircle, AlertCircle, Loader } from 'lucide-react'
 import jsPDF from 'jspdf'
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = '/api'
 
 export const ExportPanel = ({ campaignId, campaignData }) => {
   const [exporting, setExporting] = useState(false)

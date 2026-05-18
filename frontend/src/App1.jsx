@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const API_URL = "http://localhost:8000/api"
+const API_URL = "/api"
 
 // Email Status Icons & Colors
 const EMAIL_ICONS = {
