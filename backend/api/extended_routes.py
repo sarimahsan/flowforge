@@ -205,6 +205,7 @@ async def create_campaign_from_pipeline(request: CreateCampaignRequest, db: Sess
         print(f"📋 [DEBUG] Initializing QA agent for email scoring")
         qa_agent = ConfidenceScoreAgent(groq_api_key=settings.GROQ_API_KEY)
         emails_saved = 0
+        first_email_id = None
         
         for idx, email_data in enumerate(emails_list, 1):
             print(f"📋 [DEBUG] Processing email {idx}/{len(emails_list)}")
@@ -231,6 +232,9 @@ async def create_campaign_from_pipeline(request: CreateCampaignRequest, db: Sess
             )
 
             # Save email score
+            if idx == 1:
+                first_email_id = email.id
+                
             EmailScoreService.create_email_score(
                 db,
                 email_id=email.id,
@@ -277,15 +281,16 @@ async def create_campaign_from_pipeline(request: CreateCampaignRequest, db: Sess
             now = datetime.utcnow()
             for idx, days_offset in enumerate(schedule_days, 1):
                 send_date = now + timedelta(days=days_offset)
-                FollowUpService.create_followup(
-                    db,
-                    campaign.id,
-                    0,  # email_id
-                    sequence_day=idx,
-                    suggested_send_time=send_date,
-                    industry=industry,
-                    rationale=f"Day {days_offset} follow-up - {industry} best practice"
-                )
+                if first_email_id is not None:
+                    FollowUpService.create_followup(
+                        db,
+                        campaign.id,
+                        first_email_id,  # email_id
+                        sequence_day=idx,
+                        suggested_send_time=send_date,
+                        industry=industry,
+                        rationale=f"Day {days_offset} follow-up - {industry} best practice"
+                    )
 
         return CreateCampaignResponse(
             campaign_id=campaign.id,
